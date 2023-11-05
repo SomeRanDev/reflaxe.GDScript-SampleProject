@@ -1,0 +1,7 @@
+-p src
+
+-lib gdscript
+
+-D gdscript-output=godot_project/gdscript
+
+reflaxe_godot

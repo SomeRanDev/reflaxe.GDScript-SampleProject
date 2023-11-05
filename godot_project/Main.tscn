@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3j6h8c7cy2j0"]
+
+[ext_resource type="Script" path="res://gdscript/HxPlayer.gd" id="1_72kvu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aaurx"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3qu87"]
+material = SubResource("StandardMaterial3D_aaurx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kyogh"]
+
+[node name="Main" type="Node3D"]
+
+[node name="HxPlayer" type="Node3D" parent="."]
+script = ExtResource("1_72kvu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HxPlayer"]
+mesh = SubResource("BoxMesh_3qu87")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.557948, 0.583194, -0.590405, 3.07181e-08, 0.711438, 0.702749, 0.829876, -0.392097, 0.396945, -6.02595, 4.20485, 4.23529)
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_kyogh")
+
+[node name="CameraBase" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraBase"]
+transform = Transform3D(1, 0, 0, 0, 0.900691, 0.434461, 0, -0.434461, 0.900691, 0, 3.26377, 5.49414)

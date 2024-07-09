@@ -13,5 +13,5 @@ import haxe.macro.Expr;
 macro function find(name: ExprOf<String>, nodeType: Expr) {
 	final exprString = haxe.macro.ExprTools.toString(nodeType);
 	final ct = haxe.macro.MacroStringTools.toComplex(exprString);
-	return macro cast(get_node(NodePath.make($name)), $ct);
+	return macro cast(get_node(new NodePath($name)), $ct);
 }
